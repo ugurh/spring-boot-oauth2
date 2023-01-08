@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+jwt:
+  clientId: glee-o-meter
+  client-secret: secret
+  accessTokenValidititySeconds: 100
+  refreshTokenValiditySeconds: 1000
+
+  
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:file:~/test
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: true
+    show-sql: true
+    generate-ddl: true
+    database: h2
+    properties:
+      hibernate:
+        globally-quoted-identifiers: true
+        jdbc:
+          lob:
+            non-contextual-creation: true
+
+
